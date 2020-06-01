@@ -7,7 +7,10 @@ output:
 
 
 ## Loading and preprocessing the data
-
+temp <- tempfile()
+download.file("https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip",temp)
+  data <- read.table(unz(temp, "activity.csv"),
+                     sep = ";", header = TRUE, stringsAsFactors = FALSE)
 
 
 ## What is mean total number of steps taken per day?
